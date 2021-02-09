@@ -1,30 +1,37 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import axios from 'configs/axios'
-function Home(props) {
-  console.log(props)
+import axios from 'src/configs/axios';
+
+import Circle from 'public/images/circle-accent-1.svg'
+
+function Home({ data }) {
+  //console.log(data)
   return (
-    <div className="container mx-auto mt-4">
+    <>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1>Saya Halaman Utama</h1>
-        <Link href="/random"><a>Bring me to random fetch page</a></Link>
+        <section className="header-clipping pt-10">
+          <Circle className="absolute left-0 bottom-0"></Circle>
+          <div className="sunshine"></div>
+          <div className="container mx-auto"></div>
+
+        </section>
        </main>
 
-    </div>
+    </>
   )
 }
 
 Home.getInitialProps = async () => {
   try {
     const data = await axios.get(`/courses`)
-    return data;  
+    return { data: data.data.data };
   } catch (error) {
-    return error
+    return error;
   }
 }
 
