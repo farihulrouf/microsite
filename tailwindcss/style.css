@@ -21,7 +21,7 @@
     height: 90%;
     opacity: 0.8;
     clip-path: polygon(46% 0%, 82% 0%, 67% 100%, 0% 100%);
-    background: transparent linier-gradient(130.09deg, #3d47bd 0%, #2e37a4 50.8%);
+    background: #3d47bd;
 }
 
 .header-clipping:before {

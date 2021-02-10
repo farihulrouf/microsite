@@ -3,13 +3,14 @@ import Link from 'next/link';
 import axios from 'src/configs/axios';
 import Header from 'src/parts/Header'
 import Circle from 'public/images/circle-accent-1.svg'
-//import Headera from 'src/parts/Headera';
+import Hero from 'src/parts/Hero'
+
 function Home({ data }) {
   //console.log(data)
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Micro</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -19,6 +20,7 @@ function Home({ data }) {
           <div className="sunshine"></div>
           <div className="container mx-auto">
             <Header></Header>
+            <Hero></Hero>
            </div>
 
         </section>

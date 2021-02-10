@@ -25,7 +25,7 @@ export default function Header({onLight}){
                         <Link href="/">
                             <a className={[
                                 linkColor, 
-                                "text-white hover:text-teal-500 text-lg px-6 py-3",
+                                "text-white hover:text-red-500 text-lg px-6 py-3 font-medium",
                                 ].join(" ")}>
                                 Home
                             </a>
@@ -36,7 +36,7 @@ export default function Header({onLight}){
                         <Link href="/">
                         <a className={[
                             linkColor, 
-                            "text-white hover:text-teal-500 text-lg px-6 py-3",
+                            "text-white hover:text-teal-500 text-lg px-6 py-3 font-medium",
                             ].join(" ")}>
                                 Pricing
                             </a>
@@ -45,7 +45,7 @@ export default function Header({onLight}){
 
                     <li>
                         <Link href="/">
-                        <a className={[linkColor, "text-white hover:text-teal-500 text-lg px-6 py-3",].join(" ")}>
+                        <a className={[linkColor, "text-white hover:text-teal-500 text-lg px-6 py-3 font-medium",].join(" ")}>
                                 Features
                             </a>
                         </Link>
@@ -54,7 +54,7 @@ export default function Header({onLight}){
 
                     <li>
                         <Link href="/">
-                        <a className={[linkColor, "text-white hover:text-teal-500 text-lg px-6 py-3",].join(" ")}>
+                        <a className={[linkColor, "text-white hover:text-teal-500 text-lg px-6 py-3 font-medium",].join(" ")}>
                                 Story
                             </a>
                         </Link>
@@ -68,7 +68,7 @@ export default function Header({onLight}){
                             rel="noopener noereferre"
                             href={linkCTA}
                             className="bg-indigo-700 hover:bg-indigo-800 transition-all duration-200 text-white hover:text-teal-500
-                            text-lg px-6 py-3 ml-6"
+                            text-lg px-6 py-3 ml-6 font-medium"
                         >
                                 {textCTA}
                         </a>
