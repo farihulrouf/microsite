@@ -1,0 +1,1 @@
+{"ast":null,"code":"import axios from 'axios';\nimport errorHandler from './errorHandler';\nvar instance = axios.create({\n  baseURL: \"\".concat(process.env.NEXT_PUBLIC_API_HOST)\n});\ninstance.interceptors.response.use(function (response) {\n  return response.data;\n}, errorHandler);\nexport default instance;","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"import axios from 'axios';\nimport errorHandler from './errorHandler';\nconst instance = axios.create({\n  baseURL: `${process.env.NEXT_PUBLIC_API_HOST}`\n});\ninstance.interceptors.response.use(response => response.data, errorHandler);\nexport default instance;","map":null,"metadata":{},"sourceType":"module"}
