@@ -6,6 +6,7 @@ import Circle from 'public/images/circle-accent-1.svg'
 import Hero from 'src/parts/Hero'
 import Clients from 'src/parts/Clients'
 import ListCourses from 'src/parts/ListCourses'
+import ListCategories from 'src/parts/ListCategories'
 
 function Home({ data }) {
   //console.log(data)
@@ -31,6 +32,10 @@ function Home({ data }) {
 
         <section className="container mx-auto pt-24">
           <ListCourses data={data}></ListCourses>
+        </section>
+
+        <section className="container mx-auto pt-24">
+          <ListCategories data={data}></ListCategories>
         </section>
        </main>
 
