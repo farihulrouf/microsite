@@ -3,7 +3,7 @@ import Link from 'next/link'
 import IconPlay from "public/images/icon-play.svg"
 
 export default function RenderItem( {item} ) {
-    console.log(item)
+    //console.log(item)
     return (
         <div className="w-1/4 px-4">
             <div className="item relative">

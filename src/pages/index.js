@@ -8,6 +8,8 @@ import Clients from 'src/parts/Clients'
 import ListCourses from 'src/parts/ListCourses'
 import ListCategories from 'src/parts/ListCategories'
 
+import Footer from 'src/parts/Footer'
+
 function Home({ data }) {
   //console.log(data)
   return (
@@ -37,6 +39,12 @@ function Home({ data }) {
         <section className="container mx-auto pt-24">
           <ListCategories data={data}></ListCategories>
         </section>
+
+        <section className="bg-indigo-900 mt-24 py-12">
+          <Footer></Footer>
+        </section>
+
+        
        </main>
 
     </>
