@@ -2,6 +2,11 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Header from 'src/parts/Header'
 import courses from 'src/constants/api/courses'
+import Feature from 'src/parts/Details/Feature'
+import Nametag from 'public/images/icon-nametag.svg'
+
+import Certificate from 'public/images/certificate.svg'
+import Playback from 'public/images/video.svg'
 import Youtube from 'react-youtube'
 import React from 'react'
 function DetailCourse({ data }) {
@@ -47,6 +52,38 @@ function DetailCourse({ data }) {
                     <Header></Header>
                 </div>               
             </section>
+            
+            <section className="container mx-auto pt-24 relative">
+                <div className="absolute top-0 w-full transform -translate-y-1/2">
+                    <div  className="w-3/4 mx-auto">
+                        <div className="flex justify-between">
+                            
+                            <Feature data={{
+                                icon: <Nametag className="fill-teal-500" />,
+                                meta: "Student",
+                                value: 18932
+                            }} />
+
+
+                            <Feature data={{
+                                icon: <Playback className="fill-teal-500" />,
+                                meta: "Video",
+                                value: 18932
+                            }} />
+
+
+
+                            <Feature data={{
+                                icon: <Certificate className="fill-teal-500" />,
+                                meta: "Certificate",  
+                                value: 1
+                            }} />
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
          </>
      );
  }
