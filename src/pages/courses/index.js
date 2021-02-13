@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
-
-function Random({ data }) {
+import courses from 'src/constants/api/courses'
+function DetailCourse ({ data }) {
     
     return (
+        
         <>
             <Head>
                 <title>Micro | Random</title>
@@ -30,16 +31,14 @@ function Random({ data }) {
     )
 }
 
-Random.getInitialProps = async () => {
+DetailCourse.getInitialProps = async () => {
     try {
-        const data = await fetch('https://jsonplaceholder.typicode.com/todos')
-        .then(response => response.json())
-        .then(json => json)
-        return { data }
+        const data = await courses.details(id)
+        return { data: data }
     } catch (error) {
         
     }
 }
 
 
-export default Random
+export default DetailCourse

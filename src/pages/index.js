@@ -7,7 +7,7 @@ import Hero from 'src/parts/Hero'
 import Clients from 'src/parts/Clients'
 import ListCourses from 'src/parts/ListCourses'
 import ListCategories from 'src/parts/ListCategories'
-
+import courses from 'src/constants/api/courses'
 import Footer from 'src/parts/Footer'
 
 function Home({ data }) {
@@ -53,8 +53,9 @@ function Home({ data }) {
 
 Home.getInitialProps = async () => {
   try {
-    const data = await axios.get(`/courses`)
-    return { data: data.data };
+    //const data = await axios.get(`/courses`)
+    const data = await courses.all();
+    return { data: data };
   } catch (error) {
     return error;
   }
