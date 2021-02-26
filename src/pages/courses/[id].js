@@ -11,6 +11,8 @@ import Playback from 'public/images/video.svg'
 import Youtube from 'react-youtube'
 import  { useState, useRef, useEffect } from 'react'
 import formatThousand from "src/helpers/formatThousand"
+import index from 'src/parts/ListCategories'
+import CoursePhoto from 'src/parts/Details/CoursePhoto'
 function DetailCourse({ data }) {
      //console.log(data);
      const footer = useRef(null);
@@ -155,9 +157,27 @@ function DetailCourse({ data }) {
                             </p>
                             
                         </section>
+                        <section className="mt-10">
+                            <h6 className="font-medium text-gray-900 text-2xl mb-4">
+                                Course <span className="text-teal-500">Photos</span>
+                            </h6>
+
+                            <div className="flex justify-start items-center -mx-4 mt-6">
+                              {data?.ImageCourses?.length > 0 ? (
+                                 data?.ImageCourses?.map?.((photo, index) => (
+                                      <CoursePhoto data={photo.image} key={index} />
+                                  ))
+                              ) : (
+                                  <div className="w-full text-center py-12">No Item Found</div>
+                              )
+                                
+                              }
+                                                          
+                            </div>
+
+                        </section>
                     </div>
                 </div>
-
             </section>
             <div style={{ height: 2000}}></div> 
             <section className="mt-24 bg-indigo-900 py-12" ref={footer}>
