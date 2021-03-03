@@ -190,6 +190,29 @@ function DetailCourse({ data }) {
                                 <div className="w-full text-center py-12">No Chapter Found</div>
                             )}
                         </section>
+
+                        <section className="mt-10">
+                            <h6 className="font-medium text-gray-500 text-2xl mb-4">
+                                Our <span className="text-teal-500">Instructor</span>
+                            </h6>
+                            <div className="flex items-center">
+                                <img 
+                                    src={data?.Mentor?.profile ?? " "} 
+                                    alt={data?.Mentor?.name} 
+                                    className="w-20 rounded-full overflow-hidden object-cover" 
+                                />
+
+                                <div className="ml-4">
+                                    <h2 className="text-lg text-gray-900">
+                                        {data?.Mentor.name ?? "Mentors's name"}
+                                    </h2>
+
+                                    <h3 className="text-sm text-gray-60">
+                                        {data?.Mentor?.profession}
+                                    </h3>
+                                </div>
+                            </div>
+                        </section>
                     </div>
                 </div>
             </section>

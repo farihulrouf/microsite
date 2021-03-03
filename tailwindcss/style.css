@@ -184,4 +184,19 @@
     @apply text-indigo-400;
 }
 
- 
+.accordian-item {
+    @apply transition-all duration-300
+}
+
+.accordian-item-enter {
+    opacity: 0;
+}
+
+.accordian-item-enter-active {
+    opacity: 1;
+}
+
+.accordian-item-enter-exit {
+    opacity: 1;
+}
+
