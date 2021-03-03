@@ -13,6 +13,8 @@ import  { useState, useRef, useEffect } from 'react'
 import formatThousand from "src/helpers/formatThousand"
 import index from 'src/parts/ListCategories'
 import CoursePhoto from 'src/parts/Details/CoursePhoto'
+import RenderPreview from "src/parts/Details/RenderPreview"
+
 function DetailCourse({ data }) {
      //console.log(data);
      const footer = useRef(null);
@@ -176,6 +178,18 @@ function DetailCourse({ data }) {
                             </div>
 
                         </section>
+                        
+                        <section className="mt-10">
+                            <h6 className="font-medium text-gray-900 text-2xl mb-4">
+                                You Will <span className="text-teal-500">Learn</span>
+                            </h6>
+
+                            {data?.chapters?.length > 0 ? (
+                                <RenderPreview previews={data.chapters}></RenderPreview>    
+                            ) : (
+                                <div className="w-full text-center py-12">No Chapter Found</div>
+                            )}
+                        </section>
                     </div>
                 </div>
             </section>
@@ -188,15 +202,14 @@ function DetailCourse({ data }) {
      );
  }
 
- DetailCourse.getInitialProps = async (props) => {
-     //console.log(props)
-     const {id} = props.query;
+DetailCourse.getInitialProps = async (props) => {
+    const { id } = props.query;
     try {
         const data = await courses.details(id);
-        return { data }
+        return { data };
     } catch (error) {
         
-    }
+    }    
 };
 
 export default DetailCourse;
