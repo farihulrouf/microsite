@@ -14,6 +14,7 @@ import formatThousand from "src/helpers/formatThousand"
 import index from 'src/parts/ListCategories'
 import CoursePhoto from 'src/parts/Details/CoursePhoto'
 import RenderPreview from "src/parts/Details/RenderPreview"
+import HappyStudent from "src/parts/Details/HappyStudent";
 
 function DetailCourse({ data }) {
      //console.log(data);
@@ -191,7 +192,7 @@ function DetailCourse({ data }) {
                             )}
                         </section>
 
-                        <section className="mt-10">
+                        <section className="mt-10 w-2/3">
                             <h6 className="font-medium text-gray-500 text-2xl mb-4">
                                 Our <span className="text-teal-500">Instructor</span>
                             </h6>
@@ -199,7 +200,7 @@ function DetailCourse({ data }) {
                                 <img 
                                     src={data?.Mentor?.profile ?? " "} 
                                     alt={data?.Mentor?.name} 
-                                    className="w-20 rounded-full overflow-hidden object-cover" 
+                                    className="w-20 h-20 rounded-full overflow-hidden object-cover" 
                                 />
 
                                 <div className="ml-4">
@@ -213,6 +214,18 @@ function DetailCourse({ data }) {
                                 </div>
                             </div>
                         </section>
+
+                        <section className="mt-10 w-6/12">
+                            <h6 className="font-medium text-gray-900 text-2xl mb-4">
+                                Happy <span className="text-teal-500">Students</span>
+                            </h6>
+                            {
+                                data.reviews?.map( (testimonial, index) => {
+                                    return <HappyStudent key={index} data={testimonial}></HappyStudent>
+                                })
+                            }
+                        </section>
+
                     </div>
                 </div>
             </section>
