@@ -24,6 +24,11 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
+    "/courses": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/courses.js"
+    ],
     "/courses/[id]": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
